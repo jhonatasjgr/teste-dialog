@@ -1,1 +1,18 @@
-<p>dialogo works!</p>
+<h2 mat-dialog-title>
+  <strong>{{data.tipo | uppercase}}</strong>
+</h2>
+<hr>
+<mat-dialog-content class="mat-typography">
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <mat-label>Ocorrencia de {{data.tipo}}</mat-label>
+        <textarea matInput placeholder="Descreva a Ocorrencia"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button [mat-dialog-close]="true" cdkFocusInitial (click)="postOcorrencia()">Aprovar</button>
+</mat-dialog-actions>
